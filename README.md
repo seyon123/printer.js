@@ -6,8 +6,7 @@ This library has two main components.
 1. Its ability to ease the time and effort required to set up an HTML5 canvas.
 2. Provide a number of helpful 'utilities' that will make drawing, writing and making significantly easier.
 
-
-<br><br>
+<br>
 In addition to making the built in canvas drawing functions easier to use, this library makes it easy to animate projects and provides built in screen resize handling.
 <br><br>
 It's good to know that you are required to have the functions setup() and draw() in either a separate JavaScript document (main.js for example) or within script tags.
