@@ -64,10 +64,9 @@ function random(a, b){
   return Math.random()*(b-a)+a;
 }
 
-function map(val, a, b, c, d){
-  return v = (val/b)*d
-}
-
+// function map(val, a, b, c, d){
+//   return v = (val/b)*d
+// }
 function circle(x, y, s, colour){
   c.fillStyle = colour;
   c.beginPath();
@@ -143,6 +142,10 @@ function screen(){
 }
 
 function log(msg){
+  console.log(msg);
+}
+
+function print(msg){
   console.log(msg);
 }
 
