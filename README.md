@@ -5,6 +5,8 @@ A simple library to help you quickly create animations and visualizations using 
 This library has two main components.
 1. Its ability to ease the time and effort required to set up an HTML5 canvas.
 2. Provide a number of helpful 'utilities' that will make drawing, writing and making significantly easier.
+
+
 <br><br>
 In addition to making the built in canvas drawing functions easier to use, this library makes it easy to animate projects and provides built in screen resize handling.
 <br><br>
