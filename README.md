@@ -12,7 +12,7 @@ To get started, simply populate an html file with the following (or use the one 
 2. Reference to printer.js
 3. In either a separate .js file or inline, create a setup() function as well as a draw() function.
 
-Sample html document:
+Sample HTML document:
 ```
 <!DOCTYPE html>
 <html>
@@ -24,6 +24,17 @@ Sample html document:
 </html>
 ```
 Be sure to create a main.js file and keep printer.js in the same directory as the HTML document.
+<br><br>
+
+Sample JavaScript file (main.js or otherwise):
+```
+function setup() {}
+
+function draw() {
+  rect(50,50,50,50,"red");
+}
+```
+
 
 ## Functions
 
