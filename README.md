@@ -9,10 +9,7 @@ This library has two main components.
 In addition to making the built in canvas drawing functions easier to use, this library makes it easy to animate projects and provides built in screen resize handling.
 
 ## Getting Started
-To get started, simply populate an html file with the following (or use the one provided):
-1. A basic html structure
-2. Reference to printer.js
-3. In either a separate .js file or inline, create a setup() as well as a draw() function.
+To get started, simply create an html file and copy the following (or download the premade file):
 
 Sample HTML document:
 ```
@@ -25,9 +22,9 @@ Sample HTML document:
   </body>
 </html>
 ```
-Be sure to create a main.js file and keep printer.js in the same directory as the HTML document.
+Be sure to create a main.js file and download the printer.js file in the same directory as the HTML document.
 
-Sample JavaScript file (main.js or otherwise):
+Sample JavaScript file (contents of main.js or otherwise):
 ```
 setup() {}
 
