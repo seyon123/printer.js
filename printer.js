@@ -63,20 +63,11 @@ function random(a, b){
   }
   return Math.random()*(b-a)+a;
 }
-function magnitude(val, max){
-  var calc = Math.sqrt(val.x*val.x+val.y*val.y)
-  return {x:(max/calc)*val.x, y:(max/calc)*val.y}
-}
-function limit(v, max){
-  if(!(Math.abs(v.x)<max))
-    v.x = (max*v.x)/Math.abs(v.x);
-  if(!(Math.abs(v.y)<max))
-    v.y = (max*v.y)/Math.abs(v.y);
-  return v;
-}
+
 function map(val, a, b, c, d){
   return v = (val/b)*d
 }
+
 function circle(x, y, s, colour){
   c.fillStyle = colour;
   c.beginPath();
@@ -92,6 +83,7 @@ function rect(x, y, h, w, colour){
   c.rect(x, y, h, w);
   c.stroke();
 }
+
 function line(x, y, x2, y2, w, colour){
   if(w !=undefined)
     c.lineWidth = w+"";
@@ -105,6 +97,7 @@ function line(x, y, x2, y2, w, colour){
   c.lineTo(x2,y2);
   c.stroke();
 }
+
 function text(text, x, y, f, colour){
   if(x == undefined || y == undefined){
     x = 0;
@@ -119,32 +112,40 @@ function text(text, x, y, f, colour){
   c.font = f+"";
   c.fillText(text+"",x,y);
 }
+
 function clearCanvas() {
     c.clearRect(0, 0, width, height);
 }
+
 function mouse(){
   return {x: mouseX, y: mouseY,down:mouseDown};
 }
+
 function randomColour() {
     var r = Math.floor(Math.random() * 150) + 105;
     var g = Math.floor(Math.random() * 150) + 105;
     var b = Math.floor(Math.random() * 150) + 105;
     return "rgb(" + r + "," + g + "," + b + ")";
 }
+
 function getDistance(a, b){
   return Math.sqrt(Math.pow(b.x-a.x,2) + Math.pow(b.y-a.y,2));
 }
+
 function subVector(a, b){
   return {x:a.x-b.x, y:a.y-b.y};
 }
+
 function screen(){
   height = window.innerHeight;
   width = window.innerWidth;
   return({height:height,width:width});
 }
+
 function log(msg){
   console.log(msg);
 }
+
 function textPad(text, w){
   if(text.length < w){
     for(i = 0; i<=w-text.length; i++)
