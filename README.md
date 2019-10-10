@@ -7,6 +7,10 @@ This library has two main components.
 2. Provide a number of helpful 'utilities' that will make drawing, writing and making significantly easier.
 <br><br>
 In addition to making the built in canvas drawing functions easier to use, this library makes it easy to animate projects and provides built in screen resize handling.
+<br><br>
+It's good to know that you are required to have the functions setup() and draw() in either a separate JavaScript document (main.js for example) or within script tags.
+<br>
+The setup function is called one time when the page is loaded and once it has been executed, the draw() tag will be called ~50 times per second (at the moment this value does not have a function to modify it).
 
 ## Getting Started
 To get started, simply create an html file and copy the following (or download the premade file):
