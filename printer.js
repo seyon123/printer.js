@@ -52,7 +52,6 @@ window.onresize = function() {
     setup();
     draw();
 };
-#
 
 
 // Helper functions
