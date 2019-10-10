@@ -64,9 +64,6 @@ function random(a, b){
   return Math.random()*(b-a)+a;
 }
 
-// function map(val, a, b, c, d){
-//   return v = (val/b)*d
-// }
 function circle(x, y, s, colour){
   c.fillStyle = colour;
   c.beginPath();
@@ -127,14 +124,6 @@ function randomColour() {
     return "rgb(" + r + "," + g + "," + b + ")";
 }
 
-function getDistance(a, b){
-  return Math.sqrt(Math.pow(b.x-a.x,2) + Math.pow(b.y-a.y,2));
-}
-
-function subVector(a, b){
-  return {x:a.x-b.x, y:a.y-b.y};
-}
-
 function screen(){
   height = window.innerHeight;
   width = window.innerWidth;
@@ -149,10 +138,17 @@ function print(msg){
   console.log(msg);
 }
 
-function textPad(text, w){
-  if(text.length < w){
-    for(i = 0; i<=w-text.length; i++)
-      text+=" ";
-  }
-  return text;
+function crossVec(a,b){
+  var r1 = a[1]*b[2] - a[2]*b[1];
+  var r2 = a[2]*b[0] - a[0]*b[2];
+  var r3 = a[0]*b[1] - a[1]*b[0];
+  return [r1, r2, r3];
+}
+
+function subVec(a,b){
+  return [b[0]-a[0], b[1]-a[1], b[2]-a[2]];
+}
+
+function getDistance(a, b){
+  return Math.sqrt(Math.pow(b[0]-a[0],2) + Math.pow(b[1]-a[1],2));
 }

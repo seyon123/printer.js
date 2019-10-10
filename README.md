@@ -26,7 +26,6 @@ Sample HTML document:
 </html>
 ```
 Be sure to create a main.js file and keep printer.js in the same directory as the HTML document.
-<br><br>
 
 Sample JavaScript file (main.js or otherwise):
 ```
@@ -37,7 +36,10 @@ draw() {
 }
 ```
 
-
+Sample output (when you launch the HTML file):
+```
+A red square should appear in the top left corner of the page.
+```
 ## Functions
 
 #### print(value) and log(value)
