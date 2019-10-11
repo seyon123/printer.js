@@ -87,5 +87,12 @@ Given two, 3-item arrays, this product returns the result of the subtraction of 
 Tip: If you have a 2D vector, simply enter 0 as the third value.
 
 
-#### function getDistance(a, b)
+#### getDistance(a, b)
 Given two, 2-item arrays, this function returns the distance between the two sets of points.
+
+#### function lineAtAngle(x,y,angle,length,w,colour)
+This function draws a line from the given point at the given angle for the given length.
+Please note that 0 degrees points upward.
+
+#### radians(deg)
+Given a value in degrees, this function returns the same value in radians.
