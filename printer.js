@@ -1,8 +1,9 @@
 window.onload = printerSetup;
-var width, height, c, canvas;
+var width, height, c, canvas, interval;
 mouseX = 0;
 mouseY= 0;
 mouseDown = false;
+
 
 
 function printerSetup(){
@@ -26,7 +27,7 @@ function printerSetup(){
   setupCSS();
   setup();
   draw();
-  window.setInterval(draw, 20);
+  interval = window.setInterval(draw, 20);
 }
 
 
