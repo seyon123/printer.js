@@ -27,7 +27,7 @@ function printerSetup(){
   setupCSS();
   setup();
   draw();
-  interval = window.setInterval(draw, 20);
+  interval = setInterval(draw, 20);
 }
 
 
