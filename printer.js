@@ -4,14 +4,10 @@ mouseX = 0;
 mouseY= 0;
 mouseDown = false;
 
-
-
 function printerSetup(){
-
   canvas = document.createElement("CANVAS");
   c = canvas.getContext("2d");
   document.body.appendChild(canvas);
-
   canvas.onmousemove = function(e){
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -22,14 +18,12 @@ function printerSetup(){
   canvas.onmouseup = function(){
     mouseDown = false;
   }
-
   printerSizeCanvas();
   setupCSS();
   setup();
   draw();
   interval = setInterval(draw, 20);
 }
-
 
 function printerSizeCanvas() {
     height = window.innerHeight;
@@ -54,9 +48,7 @@ window.onresize = function() {
     draw();
 };
 
-
 // Helper functions
-
 function random(a, b){
   if(b == undefined){
     b=a;
@@ -64,8 +56,14 @@ function random(a, b){
   }
   return Math.random()*(b-a)+a;
 }
-
-function circle(x, y, s, colour){
+function circle(x, y, s, w, colour){
+  c.strokeStyle = colour;
+  c.lineWidth = w;
+  c.beginPath();
+  c.arc(x, y, s, 0, 2*Math.PI);
+  c.stroke();
+}
+function circleFill(x, y, s, colour){
   c.fillStyle = colour;
   c.beginPath();
   c.arc(x, y, s, 0, 2*Math.PI);
@@ -80,7 +78,6 @@ function rect(x, y, h, w, colour){
   c.rect(x, y, h, w);
   c.stroke();
 }
-
 function line(x, y, x2, y2, w, colour){
   if(w !=undefined)
     c.lineWidth = w+"";
@@ -94,7 +91,6 @@ function line(x, y, x2, y2, w, colour){
   c.lineTo(x2,y2);
   c.stroke();
 }
-
 function text(text, x, y, f, colour){
   if(x == undefined || y == undefined){
     x = 0;
@@ -104,52 +100,51 @@ function text(text, x, y, f, colour){
     f = "10px monospace";
     colour = "black";
   }
-
   c.fillStyle = colour+"";
   c.font = f+"";
   c.fillText(text+"",x,y);
 }
-
 function clearCanvas() {
     c.clearRect(0, 0, width, height);
 }
-
 function mouse(){
   return {x: mouseX, y: mouseY,down:mouseDown};
 }
-
 function randomColour() {
     var r = Math.floor(Math.random() * 150) + 105;
     var g = Math.floor(Math.random() * 150) + 105;
     var b = Math.floor(Math.random() * 150) + 105;
     return "rgb(" + r + "," + g + "," + b + ")";
 }
-
 function screen(){
   height = window.innerHeight;
   width = window.innerWidth;
   return({height:height,width:width});
 }
-
 function log(msg){
   console.log(msg);
 }
-
 function print(msg){
   console.log(msg);
 }
-
 function crossVec(a,b){
   var r1 = a[1]*b[2] - a[2]*b[1];
   var r2 = a[2]*b[0] - a[0]*b[2];
   var r3 = a[0]*b[1] - a[1]*b[0];
   return [r1, r2, r3];
 }
-
 function subVec(a,b){
   return [b[0]-a[0], b[1]-a[1], b[2]-a[2]];
 }
-
 function getDistance(a, b){
   return Math.sqrt(Math.pow(b[0]-a[0],2) + Math.pow(b[1]-a[1],2));
+}
+function lineAtAngle(x,y,angle,length,w,colour) {
+  angle -= 90;
+  x2 = x + Math.cos(radians(angle))*length;
+  y2 = y + Math.sin(radians(angle))*length;
+  this.line(x, y, x2, y2,w,colour);
+}
+function radians(deg) {
+  return ((2*Math.PI)/360) *deg;
 }
